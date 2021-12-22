@@ -1,19 +1,3 @@
-import 'package:ecommerce_app_ui_kit/src/models/route_argument.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/brand.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/brands.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/cart.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/categories.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/category.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/checkout.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/checkout_done.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/help.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/languages.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/on_boarding.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/orders.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/product.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/signin.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/signup.dart';
-import 'package:ecommerce_app_ui_kit/src/screens/tabs.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -44,11 +28,16 @@ class RouteGenerator {
                   currentTab: args,
                 ));
       case '/Category':
-        return MaterialPageRoute(builder: (_) => CategoryWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                CategoryWidget(routeArgument: args as RouteArgument));
       case '/Brand':
-        return MaterialPageRoute(builder: (_) => BrandWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) => BrandWidget(routeArgument: args as RouteArgument));
       case '/Product':
-        return MaterialPageRoute(builder: (_) => ProductWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                ProductWidget(routeArgument: args as RouteArgument));
 //      case '/Food':
 //        return MaterialPageRoute(
 //            builder: (_) => FoodWidget(
