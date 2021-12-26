@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
 class App {
-  BuildContext _context;
-  double _height;
-  double _width;
-  double _heightPadding;
-  double _widthPadding;
+  late BuildContext _context;
+  double _height = 0.0;
+  double _width = 0.0;
+  double _heightPadding = 0.0;
+  double _widthPadding = 0.0;
 
   App(_context) {
     this._context = _context;
     MediaQueryData _queryData = MediaQuery.of(this._context);
     _height = _queryData.size.height / 100.0;
     _width = _queryData.size.width / 100.0;
-    _heightPadding = _height - ((_queryData.padding.top + _queryData.padding.bottom) / 100.0);
-    _widthPadding = _width - (_queryData.padding.left + _queryData.padding.right) / 100.0;
+    _heightPadding = _height -
+        ((_queryData.padding.top + _queryData.padding.bottom) / 100.0);
+    _widthPadding =
+        _width - (_queryData.padding.left + _queryData.padding.right) / 100.0;
   }
 
   double appHeight(double v) {
@@ -33,35 +35,72 @@ class App {
   }
 }
 
-class Colors {
-  Color _mainColor = Color(0xFF009DB5);
-  Color _mainDarkColor = Color(0xFF22B7CE);
-  Color _secondColor = Color(0xFF04526B);
-  Color _secondDarkColor = Color(0xFFE7F6F8);
-  Color _accentColor = Color(0xFFADC4C8);
-  Color _accentDarkColor = Color(0xFFADC4C8);
+class ThemeColors {
+  final Color _mainColor = const Color(0xFF478DF4);
+  final Color _mainDarkColor = const Color(0xFF478DF4);
+  final Color _secondColor = const Color(0xFF704949);
+  final Color _secondDarkColor = const Color(0xFF704949);
+  final Color _backgroundColor = const Color(0xFFFFFFFF);
+  final Color _backgroundDarkColor = const Color(0xFF2c2c2c);
 
   Color mainColor(double opacity) {
-    return this._mainColor.withOpacity(opacity);
+    return _mainColor.withOpacity(opacity);
   }
 
   Color secondColor(double opacity) {
-    return this._secondColor.withOpacity(opacity);
+    return _secondColor.withOpacity(opacity);
   }
 
-  Color accentColor(double opacity) {
-    return this._accentColor.withOpacity(opacity);
+  Color backgroundColor(double opacity) {
+    return _backgroundColor.withOpacity(opacity);
   }
 
   Color mainDarkColor(double opacity) {
-    return this._mainDarkColor.withOpacity(opacity);
+    return _mainDarkColor.withOpacity(opacity);
   }
 
   Color secondDarkColor(double opacity) {
-    return this._secondDarkColor.withOpacity(opacity);
+    return _secondDarkColor.withOpacity(opacity);
   }
 
-  Color accentDarkColor(double opacity) {
-    return this._accentDarkColor.withOpacity(opacity);
+  Color backgroundDarkColor(double opacity) {
+    return _backgroundDarkColor.withOpacity(opacity);
   }
+
+  static Color mainTextColor(double opacity) {
+    return const Color(0xFF000000).withOpacity(opacity);
+  }
+
+  static Color mainTextSecondaryColor(double opacity) {
+    return const Color(0xFF72757C).withOpacity(opacity);
+  }
+}
+
+class SizeConfig {
+  static MediaQueryData? _mediaQueryData;
+  static double? screenWidth;
+  static double? screenHeight;
+  static double? defaultSize;
+  static Orientation? orientation;
+
+  void init(BuildContext context) {
+    _mediaQueryData = MediaQuery.of(context);
+    screenWidth = _mediaQueryData!.size.width;
+    screenHeight = _mediaQueryData!.size.height;
+    orientation = _mediaQueryData!.orientation;
+  }
+}
+
+// Get the proportionate height as per screen size
+double getProportionateScreenHeight(double inputHeight) {
+  double screenHeight = SizeConfig.screenHeight as double;
+  // 812 is the layout height that designer use
+  return (inputHeight / 812.0) * screenHeight;
+}
+
+// Get the proportionate height as per screen size
+double getProportionateScreenWidth(double inputWidth) {
+  double screenWidth = SizeConfig.screenWidth as double;
+  // 375 is the layout width that designer use
+  return (inputWidth / 375.0) * screenWidth;
 }
