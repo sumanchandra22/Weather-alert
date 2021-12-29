@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_alert_app/src/screens/homescreen.dart';
-
+import 'package:weather_alert_app/src/screens/sumanscreen.dart';
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // Getting arguments passed in while calling Navigator.pushNamed
@@ -9,7 +9,8 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-
+      case '/suman':
+        return MaterialPageRoute(builder: (_) => const SumanScreen());
 //      case '/MobileVerification':
 //        return MaterialPageRoute(builder: (_) => MobileVerification());
 //      case '/MobileVerification2':
