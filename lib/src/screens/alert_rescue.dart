@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:weather_alert_app/config/app_config.dart' as config;
 
-void main() {
-  runApp(const MaterialApp(
-    home: AlertRescue(),
-  ));
-}
+// void main() {
+//   runApp(const MaterialApp(
+//     home: AlertRescue(),
+//   ));
+// }
 
 class AlertRescue extends StatelessWidget {
   const AlertRescue({Key? key}) : super(key: key);
@@ -54,9 +54,9 @@ class AlertRescue extends StatelessWidget {
                                 child: Text(
                                   'Earthquake',
                                   style: TextStyle(
-                                    fontSize: height / 45.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                      fontSize: height / 45.0,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black),
                                 ),
                               ),
                             ),
@@ -74,7 +74,8 @@ class AlertRescue extends StatelessWidget {
                                   'Magnitude : 6.2(Moderate)\nLocation :\nDepth : 8.2km',
                                   style: TextStyle(
                                       fontSize: height / 45.0,
-                                      fontWeight: FontWeight.w400),
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black),
                                 ),
                               ],
                             ),
@@ -131,7 +132,7 @@ class AlertRescue extends StatelessWidget {
             ),
             // SizedBox(height: height/30.0,)
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(10.0),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
@@ -145,21 +146,23 @@ class AlertRescue extends StatelessWidget {
                         'Ways of Rescue',
                         style: TextStyle(
                             fontSize: height / 50.0,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromRGBO(38, 50, 56, 1)),
                       ),
                       Row(
                         children: [
                           Text(
                             'Lists present content in a way that makes\nit easy to identify a specific item',
-                            style:
-                                TextStyle(color: Color.fromRGBO(38, 50, 56, 1)),
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
-                            width: width / 20,
+                            width: width / 25,
                           ),
                           Icon(
                             Icons.more_vert,
-                            color: Color.fromRGBO(38, 50, 56, 1),
+                            color: Colors.grey,
                           )
                         ],
                       )
