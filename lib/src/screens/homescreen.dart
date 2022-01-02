@@ -18,6 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Text('Home',
                 style: TextStyle(color: config.ThemeColors.mainTextColor(1))),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/alert');
+              },
+              child: const Text('Weather data'),
+            ),
             // Text('Home2',
             //     style: TextStyle(color: config.ThemeColors().backgroundColor(1))),
           ],
