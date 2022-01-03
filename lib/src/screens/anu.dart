@@ -16,7 +16,7 @@ class _AnuState extends State<Anu> {
           body: Container(
             width: 500,
             decoration: const BoxDecoration(
-                color: Color.fromRGBO(225, 225, 225, 1)
+               // color: Color.fromRGBO(225, 225, 225, 1)
             ),
             child: Column(
               children: [
