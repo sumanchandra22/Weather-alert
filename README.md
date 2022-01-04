@@ -1,4 +1,4 @@
-A new Flutter application.
+Weather-alert Flutter application.
 
 ## Getting Started
 

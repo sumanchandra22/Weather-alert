@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:weather_alert_app/src/screens/homescreen.dart';
+
+
+import 'package:weather_alert_app/src/screens/sumanscreen.dart';
+
+import 'package:weather_alert_app/src/screens/anu.dart';
+
+
 import 'package:weather_alert_app/src/screens/alert_rescue.dart';
+
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -10,8 +18,18 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => const HomeScreen());
+
+
+      case '/suman':
+        return MaterialPageRoute(builder: (_) => const SumanScreen());
+
+      case '/anu':
+        return MaterialPageRoute(builder: (_) => const Anu());
+
+
       case "/alert":
         return MaterialPageRoute(builder: (_) => const AlertRescue());
+
 
 //      case '/MobileVerification':
 //        return MaterialPageRoute(builder: (_) => MobileVerification());
