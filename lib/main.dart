@@ -1,18 +1,22 @@
 import 'package:weather_alert_app/config/app_config.dart' as config;
+import 'package:weather_alert_app/provider/getit.dart';
 import 'package:weather_alert_app/route_generator.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_alert_app/services/navigation_service.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  setupLocator();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: getIt<NavigationService>().navigatorKey,
       title: 'Weather Alert Flutter',
-
-      initialRoute: '/anu',
-
+      initialRoute: '/weatherinfo',
       onGenerateRoute: RouteGenerator.generateRoute,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
