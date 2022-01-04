@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:weather_alert_app/config/app_config.dart' as config;
 
-// void main() {
-//   runApp(const MaterialApp(
-//     home: AlertRescue(),
-//   ));
-// }
+void main() {
+  runApp(const MaterialApp(
+    home: AlertRescue(),
+  ));
+}
 
 class AlertRescue extends StatelessWidget {
   const AlertRescue({Key? key}) : super(key: key);
@@ -64,7 +64,7 @@ class AlertRescue extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.fromLTRB(
-                                      20.0, 20.0, 10.0, 0),
+                                      18.0, 20.0, 10.0, 0),
                                   child: Image.asset('asset/earthquake.png'),
                                 ),
                                 SizedBox(
@@ -151,11 +151,15 @@ class AlertRescue extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text(
-                            'Lists present content in a way that makes\nit easy to identify a specific item',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w400),
+                          Flexible(
+                            child: Container(
+                              child: Text(
+                                'Lists present content in a way that makes it easy to identify a specific item',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
                           ),
                           SizedBox(
                             width: width / 25,
