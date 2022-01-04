@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:weather_alert_app/config/app_config.dart' as config;
 
-void main() {
-  runApp(const MaterialApp(
-    home: AlertRescue(),
-  ));
-}
+// void main() {
+//   runApp(const MaterialApp(
+//     home: AlertRescue(),
+//   ));
+// }
 
 class AlertRescue extends StatelessWidget {
   const AlertRescue({Key? key}) : super(key: key);
