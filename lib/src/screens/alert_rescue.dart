@@ -13,6 +13,7 @@ class AlertRescue extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return BaseView<WeatherInfoViewModel>(
+        onModelReady: (model) => model.getWeatherData(),
         builder: (ctx, model, child) => SafeArea(
               child: Scaffold(
                 body: Column(

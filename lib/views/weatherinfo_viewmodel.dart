@@ -10,6 +10,7 @@ class WeatherInfoViewModel extends BaseModel {
   void getWeatherData() async {
     Weather w = await wf.currentWeatherByCityName("Kolkata");
     info = w.humidity.toString();
-    print("====================================" + info);
+    print("====================================" + w.humidity.toString());
+    // info = "weather";
   }
 }

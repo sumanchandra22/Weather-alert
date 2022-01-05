@@ -10,6 +10,7 @@ class WeatherInfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView<WeatherInfoViewModel>(
+        onModelReady: (model) => model.getWeatherData(),
         builder: (ctx, model, child) => Scaffold(
               body: Container(
                 width: 500,
@@ -74,7 +75,7 @@ class WeatherInfoScreen extends StatelessWidget {
                                         ),
                                       ),
                                       Text(
-                                        model.day,
+                                        "",
                                         style: TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.w400,
