@@ -3,8 +3,11 @@ import 'package:weather_alert_app/provider/getit.dart';
 import 'package:weather_alert_app/route_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_alert_app/services/navigation_service.dart';
+import 'package:dotenv/dotenv.dart' show env, load;
 
 void main() {
+  load();
+
   setupLocator();
   runApp(MyApp());
 }
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: getIt<NavigationService>().navigatorKey,
       title: 'Weather Alert Flutter',
-      initialRoute: '/weatherinfo',
+      initialRoute: '/alert',
       onGenerateRoute: RouteGenerator.generateRoute,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
