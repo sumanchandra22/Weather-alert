@@ -33,28 +33,29 @@ class WeatherInfoViewModel extends BaseModel {
    void getWeatherData() async {
      List<Weather> forecast = await wf.fiveDayForecastByCityName("Patna");
      //Day-0
-     maxTemp0 = forecast[0].tempMax.toString().substring(0,6);
-     minTemp0 = forecast[0].tempMin.toString().substring(0,6);
+     maxTemp0 = forecast[0].tempMax.toString().substring(0,6) + "C";
+     minTemp0 = forecast[0].tempMin.toString().substring(0,6) + "C";
      dateP0  = forecast[0].date.toString().substring(5,10);
      //Day-0
-     maxTemp1 = forecast[1].tempMax.toString().substring(0,6);
-     minTemp1 = forecast[1].tempMin.toString().substring(0,6);
+     maxTemp1 = forecast[1].tempMax.toString().substring(0,6) + "C";
+     minTemp1 = forecast[1].tempMin.toString().substring(0,6) + "C";
      dateP1  = forecast[1].date.toString().substring(5,10);
      // //Day-0
-     maxTemp2 = forecast[2].tempMax.toString().substring(0,6);
-     minTemp2 = forecast[2].tempMin.toString().substring(0,6);
+     maxTemp2 = forecast[2].tempMax.toString().substring(0,6) + "C";
+     minTemp2 = forecast[2].tempMin.toString().substring(0,6) + "C";
      dateP2  = forecast[2].date.toString().substring(5,10);
      // //Day-0
-     maxTemp3 = forecast[3].tempMax.toString().substring(0,6);
-     minTemp3 = forecast[3].tempMin.toString().substring(0,6);
+     maxTemp3 = forecast[3].tempMax.toString().substring(0,6) + "C";
+     minTemp3 = forecast[3].tempMin.toString().substring(0,6) + "C";
      dateP3  = forecast[3].date.toString().substring(5,10);
 
-     temp = forecast[0].temperature.toString().substring(0,6);
+     temp = forecast[0].temperature.toString().substring(0,6) + "C";
      desc = forecast[0].weatherDescription.toString();
 
         print("====================================" + maxTemp0);
         print("====================================" + dateP0);
         print("====================================" + minTemp0);
         print("====================================" + desc);
+        print("WeatherInfoViewModel===============Suman");
     }
 }

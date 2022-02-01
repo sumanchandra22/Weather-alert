@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weather_alert_app/config/app_config.dart' as config;
 import 'package:weather_alert_app/provider/base_view.dart';
-import 'package:weather_alert_app/views/weatherinfo_viewmodel.dart';
+import 'package:weather_alert_app/views/forecast_viewmodel.dart';
+
+
 
 class ForecastScreen extends StatelessWidget {
   const ForecastScreen({Key? key}) : super(key: key);
@@ -12,7 +14,7 @@ class ForecastScreen extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    return BaseView<WeatherInfoViewModel>(
+    return BaseView<ForecastInfoViewModel>(
       onModelReady: (model) => model.getWeatherData(),
       builder: (ctx, model, child) => SafeArea(
             child: Scaffold(
@@ -94,7 +96,7 @@ class ForecastScreen extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0),
                           ),
-                          child: Center(child: Text(model.dateP0 + " - " + model.dateP3)),
+                          child: Center(child: Text(model.dateP0 + "/" + model.monthP0 + " - " + model.dateP3 + "/" + model.monthP3)),
                           elevation: 43,
                         ),
                       ),

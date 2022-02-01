@@ -12,6 +12,7 @@ class WeatherInfoScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     double width = MediaQuery.of(context).size.width;
     return BaseView<WeatherInfoViewModel>(
+        onModelReady: (model) => model.getWeatherData(),
         builder: (ctx, model, child) => SafeArea(
             child : Scaffold(
               body: SingleChildScrollView(
@@ -37,7 +38,7 @@ class WeatherInfoScreen extends StatelessWidget {
                                       width: width/8,
                                     ),
                                     Text(
-                                      "29-Dec-2021",
+                                      model.dateP0,
                                       style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: width/20,
@@ -71,7 +72,7 @@ class WeatherInfoScreen extends StatelessWidget {
                                           height: 10,
                                         ),
                                         Text(
-                                          "12 C",
+                                          model.minTemp1,
                                           style: TextStyle(
                                             fontSize: width/11.8,
                                             fontWeight: FontWeight.w400,
@@ -92,7 +93,7 @@ class WeatherInfoScreen extends StatelessWidget {
                                         Row(
                                           children:   [
                                             Text(
-                                              "19 C",
+                                              model.maxTemp3,
                                               style: TextStyle(
                                                 fontSize: width/22,
                                                 fontWeight: FontWeight.w400,
